@@ -11,9 +11,8 @@ import (
 )
 
 func main(){
-	task_package.NewFabricTask()
-	return
-
+	//task_package.NewFabricTask()
+	//return
 	paraNum, err := strconv.Atoi(os.Args[1]) // 并发度
 	if err != nil{
 		fmt.Printf("The first arg (parallelism) is not an integer!\n")
