@@ -39,26 +39,36 @@ func TestFabric(paraNum int, batchNum int) error {
 	for idx, w := range workers{
 		fmt.Printf("Start worker %d.\n", idx)
 		wg.Add(1)
-		go func(group sync.WaitGroup) {
+		go func(group *sync.WaitGroup) {
 			w.DoTest()
-			}(wg)
+			group.Done()
+			}(&wg)
 	}
-	wg.Wait()
-	duration := time.Since(begin)
+
 	nTotalReq := batchNum * paraNum
 	totalLatency := time.Duration(0.0)
 	nSuccessReq := 0
-	var qps float64
-	for i:=0;i<paraNum;i++{
-		res := <- results
-		nSuccessReq += res.SuccessNum
-		for _, l := range res.Latency{
-			totalLatency += *l
+
+	go func() {
+		for i:=0;i<paraNum;i++{
+			res := <- results
+			fmt.Printf("get one result.\n")
+			nSuccessReq += res.SuccessNum
+			for _, l := range res.Latency{
+				totalLatency += *l
+			}
 		}
-	}
-	qps = float64(nSuccessReq) / float64(duration.Nanoseconds())
-	avgLatency := float64(totalLatency) / float64(nSuccessReq)
-	fmt.Printf("Test finished. QPS=%v, Average Latency=%v ms, success resp = %v, fail resp = %v",
+	}()
+
+	wg.Wait()
+
+	var qps float64
+	duration := time.Since(begin)
+
+	qps = float64(nSuccessReq) / float64(duration.Seconds())
+	avgLatency := float64(totalLatency.Nanoseconds()/(10E6)) / float64(nSuccessReq)
+
+	fmt.Printf("Test finished. QPS=%v, Average Latency=%v ms, success resp = %v, fail resp = %v\n",
 		qps, avgLatency, nSuccessReq, nTotalReq-nSuccessReq)
 	return nil
 }
