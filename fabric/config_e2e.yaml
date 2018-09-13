@@ -65,7 +65,7 @@ client:
 
   # Root of the MSP directories with keys and certs.
   cryptoconfig:
-    path: ./fabric/crypto-config
+    path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config
 
   # Some SDKs support pluggable KV stores, the properties under "credentialStore"
   # are implementation specific
@@ -97,9 +97,9 @@ client:
     # [Optional]. Client key and cert for TLS handshake with peers and orderers
     client:
       key:
-        path: ./fabric/crypto-config/peerOrganizations/org1.lychee.com/users/Admin@org1.lychee.com/tls/client.key
+        path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org1.lychee.com/users/Admin@org1.lychee.com/tls/client.key
       cert:
-        path: ./fabric/crypto-config/peerOrganizations/org1.lychee.com/users/Admin@org1.lychee.com/tls/client.crt
+        path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org1.lychee.com/users/Admin@org1.lychee.com/tls/client.crt
 
 #
 # [Optional]. But most apps would have this section so that channel objects can be constructed
@@ -216,7 +216,7 @@ organizations:
     mspid: Org1MSP
 
     # This org's MSP store (absolute path or relative to client.cryptoconfig)
-    cryptoPath:  ./fabric/crypto-config/peerOrganizations/org1.lychee.com/users/Admin@org1.lychee.com/msp
+    cryptoPath:  ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org1.lychee.com/users/Admin@org1.lychee.com/msp
 
     peers:
       - peer0.org1.lychee.com
@@ -239,7 +239,7 @@ organizations:
     mspid: Org2MSP
 
     # This org's MSP store (absolute path or relative to client.cryptoconfig)
-    cryptoPath:  ./fabric/crypto-config/peerOrganizations/org2.lychee.com/users/Admin@org2.lychee.com/msp
+    cryptoPath:  ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org2.lychee.com/users/Admin@org2.lychee.com/msp
 
     peers:
       - peer0.org2.lychee.com
@@ -253,7 +253,7 @@ organizations:
       mspID: OrdererMSP
 
       # Needed to load users crypto keys and certs for this org (absolute path or relative to global crypto path, DEV mode)
-      cryptoPath: ./fabric/crypto-config/ordererOrganizations/lychee.com/users/Admin@lychee.com/msp
+      cryptoPath: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/ordererOrganizations/lychee.com/users/Admin@lychee.com/msp
 
 
 #
@@ -281,7 +281,7 @@ orderers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: ./fabric/crypto-config/ordererOrganizations/lychee.com/tlsca/tlsca.lychee.com-cert.pem
+      path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/ordererOrganizations/lychee.com/tlsca/tlsca.lychee.com-cert.pem
 
 #
 # List of peers to send various requests to, including endorsement, query
@@ -306,7 +306,7 @@ peers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: ./fabric/crypto-config/peerOrganizations/org1.lychee.com/tlsca/tlsca.org1.lychee.com-cert.pem
+      path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org1.lychee.com/tlsca/tlsca.org1.lychee.com-cert.pem
 
   peer1.org1.lychee.com:
     # this URL is used to send endorsement and query requests
@@ -326,7 +326,7 @@ peers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: ./fabric/crypto-config/peerOrganizations/org1.lychee.com/tlsca/tlsca.org1.lychee.com-cert.pem
+      path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org1.lychee.com/tlsca/tlsca.org1.lychee.com-cert.pem
 
   peer0.org2.lychee.com:
     url: peer0.org2.lychee.com:7051
@@ -343,7 +343,7 @@ peers:
       allow-insecure: false
 
     tlsCACerts:
-      path: ./fabric/crypto-config/peerOrganizations/org2.lychee.com/tlsca/tlsca.org2.lychee.com-cert.pem
+      path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org2.lychee.com/tlsca/tlsca.org2.lychee.com-cert.pem
 
 #
 # Fabric-CA is a special kind of Certificate Authority provided by Hyperledger Fabric which allows
@@ -355,13 +355,13 @@ certificateAuthorities:
     url: https://ca0.org1.lychee.com:7054
     tlsCACerts:
       # Comma-Separated list of paths
-      path: ./fabric/crypto-config/peerOrganizations/org1.lychee.com/tlsca/tlsca.org1.lychee.com-cert.pem
+      path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org1.lychee.com/tlsca/tlsca.org1.lychee.com-cert.pem
       # Client key and cert for SSL handshake with Fabric CA
       client:
         key:
-          path: ./fabric/crypto-config/peerOrganizations/org1.lychee.com/users/Admin@org1.lychee.com/tls/client.key
+          path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org1.lychee.com/users/Admin@org1.lychee.com/tls/client.key
         cert:
-          path: ./fabric/crypto-config/peerOrganizations/org1.lychee.com/users/Admin@org1.lychee.com/tls/client.crt
+          path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org1.lychee.com/users/Admin@org1.lychee.com/tls/client.crt
 
     # Fabric-CA supports dynamic user enrollment via REST APIs. A "root" user, a.k.a registrar, is
     # needed to enroll and invoke new users.
@@ -374,13 +374,13 @@ certificateAuthorities:
     url: https://ca0.org2.lychee.com:7054
     tlsCACerts:
       # Comma-Separated list of paths
-      path: ./fabric/crypto-config/peerOrganizations/org2.lychee.com/tlsca/tlsca.org2.lychee.com-cert.pem
+      path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org2.lychee.com/tlsca/tlsca.org2.lychee.com-cert.pem
       # Client key and cert for SSL handshake with Fabric CA
       client:
         key:
-          path: ./fabric/crypto-config/peerOrganizations/org2.lychee.com/users/Admin@org2.lychee.com/tls/client.key
+          path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org2.lychee.com/users/Admin@org2.lychee.com/tls/client.key
         cert:
-          path: ./fabric/crypto-config/peerOrganizations/org2.lychee.com/users/Admin@org2.lychee.com/tls/client.crt
+          path: ${GOPATH}/src/github.com/QPSTestTool/fabric/crypto-config/peerOrganizations/org2.lychee.com/users/Admin@org2.lychee.com/tls/client.crt
 
      # Fabric-CA supports dynamic user enrollment via REST APIs. A "root" user, a.k.a registrar, is
      # needed to enroll and invoke new users.
