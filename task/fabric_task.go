@@ -15,13 +15,13 @@ type FabricTask struct {
 }
 
 func NewFabricTask() (*FabricTask, error) {
-	conf := config.FromFile("config_e2e.yaml")
+	conf := config.FromFile("./fabric/config_e2e.yaml")
 	sdk, err := fabsdk.New(conf)
 	if err != nil{
 		log.Fatal("create msp failed. err=%+=v", err)
 		return nil, err
 	}
-	mspClient, err := msp.New(sdk.Context(), msp.WithOrg("org1.lychee.com"))
+	mspClient, err := msp.New(sdk.Context(), msp.WithOrg("org1"))
 	if err != nil{
 		log.Fatal("create msp failed. err=%+=v", err)
 		return nil, err
@@ -35,7 +35,7 @@ func NewFabricTask() (*FabricTask, error) {
 	}
 	channelProvider := sdk.ChannelContext("sunshine",
 		fabsdk.WithUser("Admin"),
-		fabsdk.WithOrg("member1.example.com"))
+		fabsdk.WithOrg("org1"))
 
 	channelClient, err := channel.New(channelProvider)
 	if err != nil {
