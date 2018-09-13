@@ -12,10 +12,13 @@ import (
 type FabricTask struct {
 	cli *channel.Client
 	sdk *fabsdk.FabricSDK
+	taskName string
 }
 
 func NewFabricTask() (*FabricTask, error) {
-	task1 := &FabricTask{}
+	task1 := &FabricTask{
+		taskName: "fabric test task",
+	}
 	conf := config.FromFile("./fabric/config_e2e.yaml")
 	sdk, err := fabsdk.New(conf)
 	if err != nil{
@@ -70,4 +73,8 @@ func (f *FabricTask) Do() error {
 func (f *FabricTask) Stop() error{
 	f.sdk.Close()
 	return nil
+}
+
+func (f *FabricTask) GetTaskName() string{
+	return f.taskName
 }

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2b4ba24-518a-4567-88d3-4619164122b7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/fabric/config_e2e.yaml" afterPath="$PROJECT_DIR$/fabric/config_e2e.yaml" />
       <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
+      <change beforePath="$PROJECT_DIR$/task/fabric_task.go" afterPath="$PROJECT_DIR$/task/fabric_task.go" />
+      <change beforePath="$PROJECT_DIR$/task/task.go" afterPath="$PROJECT_DIR$/task/task.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="64" column="19" lean-forward="true" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+            <state relative-caret-position="224">
+              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -26,18 +29,18 @@
       <file leaf-file-name="worker.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/worker/worker.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+            <state relative-caret-position="192">
+              <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fabric_task.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fabric_task.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/task/fabric_task.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1161">
-              <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="-1305">
+              <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
               <folding>
                 <element signature="e#14#288#0" expanded="true" />
               </folding>
@@ -58,8 +61,8 @@
       <file leaf-file-name="task.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task/task.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="160">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,8 +101,8 @@
       <file leaf-file-name="config_e2e.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fabric/config_e2e.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1668">
-              <caret line="330" column="24" lean-forward="true" selection-start-line="330" selection-start-column="24" selection-end-line="330" selection-end-column="24" />
+            <state relative-caret-position="352">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -146,11 +149,11 @@
         <option value="$PROJECT_DIR$/worker/tsk.go" />
         <option value="$PROJECT_DIR$/worker/task.go" />
         <option value="$PROJECT_DIR$/task/FabricTask.go" />
-        <option value="$PROJECT_DIR$/task/task.go" />
         <option value="$PROJECT_DIR$/worker/worker.go" />
         <option value="$PROJECT_DIR$/task/config_e2e.yaml" />
         <option value="$PROJECT_DIR$/fabric/hosts" />
         <option value="$PROJECT_DIR$/fabric/config_e2e.yaml" />
+        <option value="$PROJECT_DIR$/task/task.go" />
         <option value="$PROJECT_DIR$/task/fabric_task.go" />
         <option value="$PROJECT_DIR$/main.go" />
       </list>
@@ -304,7 +307,7 @@
         <state relative-caret-position="128">
           <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
-            <element signature="e#14#141#0" expanded="false" />
+            <element signature="e#14#177#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -537,14 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fabric/config_e2e.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1668">
-          <caret line="330" column="24" lean-forward="true" selection-start-line="330" selection-start-column="24" selection-end-line="330" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../hyperledger/fabric-sdk-go/pkg/client/channel/chclient.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -553,37 +548,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/task.go">
+    <entry file="file://$PROJECT_DIR$/fabric/config_e2e.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="352">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/fabric_task.go">
+    <entry file="file://$PROJECT_DIR$/task/task.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1161">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#14#288#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/worker/worker.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+        <state relative-caret-position="160">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="64" column="19" lean-forward="true" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+        <state relative-caret-position="224">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worker/worker.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/fabric_task.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1305">
+          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+          <folding>
+            <element signature="e#14#288#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
