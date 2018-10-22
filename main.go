@@ -2,14 +2,16 @@ package main
 
 import (
 	"os"
-	"github.com/QPSTestTool/worker"
+	"github.com/zbw0046/QPSTestTool/worker"
 	"fmt"
 	"time"
 	"sync"
-	task_package "github.com/QPSTestTool/task"
+	task_package "github.com/zbw0046/QPSTestTool/task"
 	"strconv"
 	"github.com/prometheus/common/log"
 )
+
+// Todo: delete all about hyperledger, store them in another branch
 
 func main(){
 	paraNum, err := strconv.Atoi(os.Args[1]) // 并发度
