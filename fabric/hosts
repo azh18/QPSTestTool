@@ -1,9 +1,0 @@
-13.251.251.228 orderer1.lychee.com
-52.221.76.95 orderer2.lychee.com
-13.251.222.20 orderer3.lychee.com
-52.221.76.95 peer0.org1.lychee.com
-13.251.222.20 peer1.org1.lychee.com
-52.220.11.26 peer0.org2.lychee.com
-18.136.172.207 peer1.org2.lychee.com
-13.251.251.228 ca0.org1.example.com
-18.136.172.207 ca0.org2.example.com

@@ -2,11 +2,11 @@ package main
 
 import (
 	"os"
-	"github.com/QPSTestTool/worker"
+	"github.com/zbw0046/QPSTestTool/worker"
 	"fmt"
 	"time"
 	"sync"
-	task_package "github.com/QPSTestTool/task"
+	task_package "github.com/zbw0046/QPSTestTool/task"
 	"strconv"
 	"github.com/prometheus/common/log"
 )
@@ -22,7 +22,7 @@ func main(){
 		fmt.Printf("The second arg (requests num) is not an integer!\n")
 		return
 	}
-	TestFabric(paraNum, batchNum)
+	TestHttp(paraNum, batchNum)
 	return
 }
 
@@ -68,9 +68,9 @@ func PressureTest(taskObj task_package.Task, paraNum int, batchNum int) (error){
 }
 
 
-func TestFabric(paraNum int, batchNum int){
-	if newTask, err := task_package.NewFabricTask(); err != nil{
-		log.Fatal("create new task error. err=%+=v\n", err)
+func TestHttp(paraNum int, batchNum int) {
+	if newTask := task_package.NewHttpTask(); newTask != nil{
+		log.Fatal("create new http task error.\n")
 	} else {
 		PressureTest(newTask, paraNum, batchNum)
 	}

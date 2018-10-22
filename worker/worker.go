@@ -2,7 +2,7 @@ package worker
 
 import (
 	"time"
-	"github.com/QPSTestTool/task"
+	"github.com/zbw0046/QPSTestTool/task"
 	"fmt"
 )
 
