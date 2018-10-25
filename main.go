@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"os"
 	"github.com/zbw0046/QPSTestTool/worker"
 	"fmt"
@@ -26,21 +27,24 @@ func main(){
 	return
 }
 
-func PressureTest(taskObj task_package.Task, paraNum int, batchNum int) (error){
+// random select task from taskObjs, to achieve the effect of random fetch
+func PressureTest(taskObjs []task_package.Task, paraNum int, batchNum int) (error){
 	workers := make([]*worker.Worker, paraNum)
 	results := make(chan *worker.Result, paraNum)
 	for i:=0;i<paraNum;i++{
-		workers[i] = worker.NewWorker(i, batchNum, taskObj, &results)
+		workers[i] = worker.NewWorker(i, batchNum, taskObjs, results)
 	}
 	begin := time.Now()
 	wg := sync.WaitGroup{}
+	parentContext := context.Background()
 	for idx, w := range workers{
 		fmt.Printf("Start worker %d.\n", idx)
 		wg.Add(1)
-		go func(group *sync.WaitGroup) {
-			w.DoTest()
+		ctx, _ := context.WithTimeout(parentContext, time.Second * 30)
+		go func(ctx context.Context, group *sync.WaitGroup) {
+			w.DoTest(ctx)
 			group.Done()
-		}(&wg)
+		}(ctx, &wg)
 	}
 	wg.Wait()
 
@@ -69,9 +73,14 @@ func PressureTest(taskObj task_package.Task, paraNum int, batchNum int) (error){
 
 
 func TestHttp(paraNum int, batchNum int) {
-	if newTask := task_package.NewHttpTask(); newTask != nil{
+	if newTasks := task_package.NewHttpTasks(time.Millisecond * 150); len(newTasks) == 0{
 		log.Fatal("create new http task error.\n")
 	} else {
-		PressureTest(newTask, paraNum, batchNum)
+		// TODO: add a helper function to automatically transform the slice of user-defined task to the slice of task interface
+		httpTasks := make([]task_package.Task, 0)
+		for _, t := range newTasks {
+			httpTasks = append(httpTasks, t)
+		}
+		PressureTest(httpTasks, paraNum, batchNum)
 	}
 }
